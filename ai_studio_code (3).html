@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<html lang="as">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amin Computer | Cyber Cafe, Digital, Computer & Mobile Services — Kamrup, Assam</title>
+  <meta name="description" content="Amin Computer (Vill - Merganda, Hatipara, Kamrup, Assam - 781141) — Aadhaar, PAN, Voter ID, চৰকাৰী ফৰ্ম, বেংকিং (AEPS), প্ৰিণ্টিং, কম্পিউটাৰ আৰু মোবাইল সেৱাৰ নিৰ্ভৰযোগ্য কেন্দ্ৰ।" />
+  <meta name="keywords" content="Amin Computer, Merganda, Hatipara, Kamrup, Assam 781141, Cyber Cafe, Digital Services, Computer Services, Mobile Repairing, SIM Card, Aadhaar, PAN, Voter ID, AEPS" />
+
+  <!-- Typography: Inter for English UI + Noto Sans Bengali for Assamese Unicode -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --white: #ffffff;
+      --surface: #f8fafc;
+      --light-blue: #eff5fb;
+      --light-blue-border: #d6e4f2;
+      --navy-deep: #0b2239;
+      --navy: #102e4d;
+      --navy-muted: #334e68;
+      --green: #15803d;
+      --green-hover: #166534;
+      --green-soft: #ecfdf3;
+      --green-border: #bbf7d0;
+      --amber-bg: #fffbeb;
+      --amber-border: #fde68a;
+      --amber-text: #92400e;
+      --text-dark: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow-xs: 0 1px 2px rgba(11, 34, 57, 0.04);
+      --shadow-sm: 0 4px 12px rgba(11, 34, 57, 0.06);
+      --radius: 8px;
+      --radius-sm: 6px;
+      --transition: 0.18s ease;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
+      background-color: var(--white);
+      color: var(--text-body);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    section[id], article[id] {
+      scroll-margin-top: 84px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Utility Bar */
+    .top-bar {
+      background: var(--navy-deep);
+      color: #dbeafe;
+      font-size: 0.82rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+    }
+
+    .top-bar-group {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .top-bar-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .top-bar-item a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    /* Header & Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar.scrolled {
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+      gap: 20px;
+    }
+
+    /* Brand Logo */
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-svg {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .brand-wordmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--navy-deep);
+      letter-spacing: 0.02em;
+    }
+
+    .brand-sub {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      transition: background-color var(--transition), color var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--navy);
+      background: var(--light-blue);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-sm {
+      padding: 8px 14px;
+      font-size: 0.84rem;
+    }
+
+    .btn-navy {
+      background: var(--navy-deep);
+      color: var(--white);
+    }
+
+    .btn-navy:hover {
+      background: var(--navy);
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .btn-green:hover {
+      background: var(--green-hover);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--navy-deep);
+      border-color: #cbd5e1;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--navy-deep);
+      background: var(--light-blue);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--navy-deep);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* Mobile Drawer */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 74px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      padding: 14px 20px 20px;
+      z-index: 999;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .mobile-menu a:hover {
+      background: var(--light-blue);
+      color: var(--navy-deep);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 56px 0 64px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .hero-category-tag {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+      background: var(--light-blue);
+      border: 1px solid var(--light-blue-border);
+      color: var(--navy);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 3.1vw, 2.45rem);
+      line-height: 1.3;
+      font-weight: 800;
+      color: var(--navy-deep);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--green);
+    }
+
+    .hero-desc {
+      font-size: 1.02rem;
+      color: var(--text-body);
+      margin-bottom: 26px;
+      max-width: 580px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .hero-pillars {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    .pillar-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.89rem;
+      font-weight: 600;
+      color: var(--navy-deep);
+    }
+
+    .pillar-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: var(--radius-sm);
+      background: var(--light-blue);
+      color: var(--navy);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    /* Right Hero Directory Box */
+    .hero-directory {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .directory-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .directory-head h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+    }
+
+    .directory-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--green);
+      background: var(--green-soft);
+      border: 1px solid var(--green-border);
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-bottom: 16px;
+    }
+
+    .featured-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 11px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      transition: border-color var(--transition), background-color var(--transition);
+    }
+
+    .featured-link:hover {
+      border-color: var(--navy);
+      background: var(--light-blue);
+    }
+
+    .featured-link svg {
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    .featured-link strong {
+      display: block;
+      font-size: 0.84rem;
+      color: var(--navy-deep);
+      line-height: 1.25;
+    }
+
+    .featured-link span {
+      display: block;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+
+    .directory-footer {
+      background: var(--navy-deep);
+      color: var(--white);
+      border-radius: var(--radius-sm);
+      padding: 13px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.88rem;
+    }
+
+    .directory-footer small {
+      display: block;
+      color: #cbd5e1;
+      font-size: 0.75rem;
+    }
+
+    /* Section Defaults */
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-surface {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      background: var(--light-blue);
+      border: 1px solid var(--light-blue-border);
+      padding: 4px 12px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 2.5vw, 1.95rem);
+      font-weight: 800;
+      color: var(--navy-deep);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    /* Services Controls */
+    .services-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding: 14px 16px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      padding: 7px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-body);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--navy);
+      color: var(--navy-deep);
+    }
+
+    .filter-btn.active {
+      background: var(--navy-deep);
+      color: var(--white);
+      border-color: var(--navy-deep);
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1 1 260px;
+      max-width: 340px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 8px 14px 8px 36px;
+      border-radius: var(--radius-sm);
+      border: 1px solid #cbd5e1;
+      background: var(--surface);
+      font-size: 0.89rem;
+      color: var(--text-dark);
+      outline: none;
+    }
+
+    .search-box input:focus {
+      background: var(--white);
+      border-color: var(--navy);
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 11px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* 9 Categories Grid (3x3 Desktop) */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-xs);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .service-card:hover {
+      border-color: #94a3b8;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .service-card.hidden {
+      display: none;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-sm);
+      background: var(--light-blue);
+      color: var(--navy-deep);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .card-icon.green {
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .card-title-group h3 {
+      font-size: 1.04rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      line-height: 1.3;
+    }
+
+    .card-title-group small {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .mode-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .mode-tag.visit {
+      background: var(--light-blue);
+      color: var(--navy);
+      border: 1px solid var(--light-blue-border);
+    }
+
+    .mode-tag.online {
+      background: var(--green-soft);
+      color: var(--green);
+      border: 1px solid var(--green-border);
+    }
+
+    .service-list {
+      list-style: none;
+      display: grid;
+      gap: 7px;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.89rem;
+      color: var(--text-body);
+      line-height: 1.45;
+    }
+
+    .service-list li svg {
+      color: var(--green);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .card-notice {
+      font-size: 0.83rem;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .card-notice.mandatory {
+      background: var(--amber-bg);
+      border: 1px solid var(--amber-border);
+      color: var(--amber-text);
+      font-weight: 600;
+    }
+
+    .card-notice.info {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .card-actions .btn {
+      flex: 1 1 auto;
+    }
+
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 36px 20px;
+      background: var(--white);
+      border: 1px dashed #cbd5e1;
+      border-radius: var(--radius);
+      color: var(--text-muted);
+    }
+
+    .service-disclaimer {
+      margin-top: 24px;
+      padding: 14px 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--navy-deep);
+      border-radius: var(--radius-sm);
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    /* About Us */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: clamp(1.5rem, 2.5vw, 1.95rem);
+      color: var(--navy-deep);
+      font-weight: 800;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .about-text p {
+      margin-bottom: 14px;
+      color: var(--text-body);
+    }
+
+    .about-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 16px;
+      margin: 20px 0 26px;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.91rem;
+      font-weight: 600;
+      color: var(--navy-deep);
+    }
+
+    .about-list li svg {
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    .about-pillars {
+      display: grid;
+      gap: 14px;
+    }
+
+    .about-pillar-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .about-pillar-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--navy-deep);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .about-pillar-card h3 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 3px;
+    }
+
+    .about-pillar-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Why Choose Us */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .why-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+    }
+
+    .why-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-sm);
+      background: var(--light-blue);
+      color: var(--navy-deep);
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+    }
+
+    .why-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 6px;
+    }
+
+    .why-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .contact-card,
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 13px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+
+    .contact-item-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--navy-deep);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item-icon.green {
+      color: var(--green);
+    }
+
+    .contact-item small {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .contact-item strong,
+    .contact-item a {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      display: block;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .form-card h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 4px;
+    }
+
+    .form-card > p {
+      font-size: 0.89rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--navy-deep);
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 9px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid #cbd5e1;
+      background: var(--surface);
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      background: var(--white);
+      border-color: var(--navy);
+    }
+
+    /* Map Card */
+    .map-card {
+      margin-top: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .map-bar {
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .map-bar strong {
+      font-size: 0.95rem;
+      color: var(--navy-deep);
+    }
+
+    .map-bar span {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-left: 6px;
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 320px;
+      border: 0;
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy-deep);
+      color: #cbd5e1;
+      padding: 52px 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.85fr 1fr 1.15fr;
+      gap: 32px;
+      padding-bottom: 34px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand-name {
+      color: var(--white);
+      font-size: 1.12rem;
+      font-weight: 800;
+      display: block;
+      line-height: 1.2;
+    }
+
+    .footer-brand-sub {
+      color: #93c5fd;
+      font-size: 0.74rem;
+      display: block;
+    }
+
+    .footer-desc {
+      font-size: 0.88rem;
+      color: #94a3b8;
+    }
+
+    footer h4 {
+      color: var(--white);
+      font-size: 0.96rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      font-size: 0.88rem;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.83rem;
+      color: #94a3b8;
+    }
+
+    /* Clean Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 950;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green);
+      color: var(--white);
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      box-shadow: 0 4px 14px rgba(11, 34, 57, 0.22);
+      transition: background-color var(--transition);
+    }
+
+    .whatsapp-float:hover {
+      background: var(--green-hover);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1060px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar {
+        display: none;
+      }
+      .nav-links,
+      .nav-actions .btn-green {
+        display: none;
+      }
+      .menu-toggle {
+        display: inline-flex;
+      }
+      .hero {
+        padding: 36px 0 44px;
+      }
+      .section {
+        padding: 52px 0;
+      }
+      .services-grid,
+      .why-grid,
+      .footer-grid,
+      .featured-grid,
+      .hero-pillars,
+      .about-list,
+      .form-grid,
+      .contact-buttons {
+        grid-template-columns: 1fr;
+      }
+      .whatsapp-float span.wa-label {
+        display: none;
+      }
+      .whatsapp-float {
+        padding: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-group">
+        <span class="top-bar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-bind="addressShort"></span>
+        </span>
+        <span class="top-bar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span data-bind="hours"></span>
+        </span>
+      </div>
+      <div class="top-bar-group">
+        <span class="top-bar-item">
+          Call: <a href="#" data-bind-tel><strong data-bind="phoneDisplay"></strong></a>
+        </span>
+        <span class="top-bar-item">
+          WhatsApp: <a href="#" data-bind-wa target="_blank" rel="noopener"><strong data-bind="whatsappDisplay"></strong></a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <!-- Amin Computer Minimal Monitor Logo -->
+      <a href="#home" class="brand" aria-label="Amin Computer Home">
+        <svg class="brand-logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="40" height="40" rx="8" fill="#0B2239"/>
+          <rect x="8" y="10" width="24" height="15" rx="2" stroke="#FFFFFF" stroke-width="2"/>
+          <path d="M16 30H24" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+          <path d="M20 25V30" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+          <path d="M14.5 17.5L18.2 21L25.5 14" stroke="#22C55E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-wordmark">
+          <span class="brand-title">AMIN COMPUTER</span>
+          <span class="brand-sub">Cyber Cafe • Digital • Computer • Mobile</span>
+        </span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#" data-bind-wa class="btn btn-green btn-sm" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.03 2C6.51 2 2.04 6.48 2.04 12c0 1.76.46 3.48 1.34 5L2 22l5.14-1.35c1.48.81 3.16 1.24 4.89 1.24 5.52 0 9.99-4.48 9.99-10S17.55 2 12.03 2zm5.82 14.13c-.25.7-1.44 1.34-2 1.42-.52.08-1.18.11-1.91-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.37-5.16-4.57-.15-.2-1.23-1.64-1.23-3.13 0-1.49.78-2.22 1.05-2.52.28-.3.6-.38.8-.38h.58c.18 0 .43-.07.68.52.25.6.85 2.07.92 2.22.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.54-.15.15-.3.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.48.13.65-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.28.1 1.76.83 2.06.98.3.15.5.23.58.35.08.13.08.73-.17 1.43z"/></svg>
+          WhatsApp Us
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px;">
+        <a href="#" data-bind-tel class="btn btn-navy btn-sm">Call Now</a>
+        <a href="#" data-bind-wa class="btn btn-green btn-sm" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. Homepage / Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-category-tag">Cyber Cafe | Digital Services | Computer Services | Mobile Services</span>
+        <h1>
+          <span>Amin Computer</span>-লৈ আপোনাক আন্তৰিক স্বাগতম
+        </h1>
+        <p class="hero-desc">
+          কামৰূপ জিলাৰ মেৰগাণ্ডা (হাতিপাৰা)-ত অৱস্থিত আমাৰ কেন্দ্ৰত আপুনি Aadhaar, PAN, Voter ID, চৰকাৰী অনলাইন ফৰ্ম, বেংকিং (AEPS), প্ৰিণ্টিং-কম্পিউটাৰ কাম, মোবাইল মেৰামতি আৰু নতুন SIM কাৰ্ডৰ সকলো সেৱা এটাই ছাঁৰ তলত লাভ কৰিব।
+        </p>
+
+        <div class="hero-cta">
+          <a href="#services" class="btn btn-navy">
+            View All Services
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#" data-bind-wa class="btn btn-green" target="_blank" rel="noopener">
+            WhatsApp Us
+          </a>
+          <a href="#" data-bind-tel class="btn btn-outline">
+            Call Now
+          </a>
+        </div>
+
+        <div class="hero-pillars">
+          <div class="pillar-item">
+            <span class="pillar-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </span>
+            <span>চাইবাৰ কেফে ও ডিজিটেল সেৱা</span>
+          </div>
+          <div class="pillar-item">
+            <span class="pillar-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            </span>
+            <span>প্ৰিণ্টিং, স্কেনিং ও কম্পিউটাৰ</span>
+          </div>
+          <div class="pillar-item">
+            <span class="pillar-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </span>
+            <span>মোবাইল মেৰামতি ও ছফ্টৱেৰ</span>
+          </div>
+          <div class="pillar-item">
+            <span class="pillar-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 10h4"/><path d="M7 14h10"/></svg>
+            </span>
+            <span>নতুন SIM কাৰ্ড আৰু MNP প'ৰ্টিং</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Services Quick Directory -->
+      <div class="hero-directory">
+        <div class="directory-head">
+          <h2>Featured Services</h2>
+          <span class="directory-badge">৯ টা সেৱাৰ শ্ৰেণী</span>
+        </div>
+
+        <div class="featured-grid">
+          <a href="#cat-aadhaar" class="featured-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M15 8h3"/><path d="M7 16h10"/></svg>
+            <div>
+              <strong>Aadhaar Card</strong>
+              <span>কেন্দ্ৰলৈ আহক</span>
+            </div>
+          </a>
+
+          <a href="#cat-pan" class="featured-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            <div>
+              <strong>PAN & Voter ID</strong>
+              <span>অনলাইন আবেদন</span>
+            </div>
+          </a>
+
+          <a href="#cat-forms" class="featured-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <div>
+              <strong>Online Forms</strong>
+              <span>চাকৰি, নামভৰ্তি ও ফলাফল</span>
+            </div>
+          </a>
+
+          <a href="#cat-govt" class="featured-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/></svg>
+            <div>
+              <strong>Govt Services</strong>
+              <span>প্ৰমাণ-পত্ৰ, পাছপ'ৰ্ট ও DL</span>
+            </div>
+          </a>
+
+          <a href="#cat-banking" class="featured-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/></svg>
+            <div>
+              <strong>Banking & AEPS</strong>
+              <span>ধন লেনদেন ও বেলেঞ্চ</span>
+            </div>
+          </a>
+
+          <a href="#cat-printing" class="featured-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <div>
+              <strong>Printing & DTP</strong>
+              <span>জেৰক্স, স্কেন, CV, PDF</span>
+            </div>
+          </a>
+
+          <a href="#cat-mobile" class="featured-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <div>
+              <strong>Mobile & SIM</strong>
+              <span>মেৰামতি, Jio, Airtel, Vi</span>
+            </div>
+          </a>
+
+          <a href="#cat-other" class="featured-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <div>
+              <strong>Other Online</strong>
+              <span>বিল, ৰিচাৰ্জ ও টিকট</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="directory-footer">
+          <div>
+            <small>Merganda, Hatipara, Kamrup (781141)</small>
+            <strong>Call: <span data-bind="phoneDisplay">8453964011</span></strong>
+          </div>
+          <a href="#contact" class="btn btn-green btn-sm">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Services Section (9 Complete Categories) -->
+  <section class="section section-surface" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Services</span>
+        <h2 class="section-title">আমাৰ সম্পূৰ্ণ ডিজিটেল, কম্পিউটাৰ আৰু মোবাইল সেৱাসমূহ</h2>
+        <p class="section-subtitle">
+          তলত ৯ টা শ্ৰেণীত আমাৰ সকলো সেৱা সজোৱা হৈছে। যিবোৰ সেৱাত ব্যক্তিগত উপস্থিতি বা বায়'মেট্ৰিকৰ প্ৰয়োজন, তাৰ বাবে অনুগ্ৰহ কৰি আমাৰ কেন্দ্ৰলৈ আহিব।
+        </p>
+      </div>
+
+      <!-- Filter & Search Controls -->
+      <div class="services-controls">
+        <div class="filter-tabs" role="tablist" aria-label="Filter services">
+          <button class="filter-btn active" data-filter="all">All Services (9)</button>
+          <button class="filter-btn" data-filter="online">অনলাইন আবেদন উপলব্ধ</button>
+          <button class="filter-btn" data-filter="visit">কেন্দ্ৰলৈ আহিবলগীয়া</button>
+        </div>
+
+        <div class="search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="serviceSearch" placeholder="সেৱা বিচাৰক (Aadhaar, PAN, Driving, Jio, SIM)..." aria-label="Search services" />
+        </div>
+      </div>
+
+      <!-- 9 Categories Grid -->
+      <div class="services-grid" id="servicesGrid">
+
+        <!-- CATEGORY 1: Aadhaar Card Services -->
+        <article class="service-card" id="cat-aadhaar" data-mode="visit" data-keywords="aadhaar আধাৰ enrolment পঞ্জীয়ন update correction name address dob mobile email photo biometric download print">
+          <div class="card-top">
+            <div class="card-title-group">
+              <div class="card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M15 8h3"/><path d="M15 12h3"/><path d="M7 16h10"/></svg>
+              </div>
+              <div>
+                <h3>১. Aadhaar Card Services</h3>
+                <small>আধাৰ কাৰ্ডৰ সেৱা</small>
+              </div>
+            </div>
+            <span class="mode-tag visit">কেন্দ্ৰ ভ্ৰমণ বাধ্যতামূলক</span>
+          </div>
+
+          <ul class="service-list">
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> New Aadhaar Enrolment (নতুন পঞ্জীয়ন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Aadhaar Update &amp; Correction (আপডেট ও সংশোধন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Name Correction (নাম সংশোধন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Address Correction (ঠিকনা সংশোধন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Date of Birth Correction (জন্ম তাৰিখ সংশোধন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Mobile Number &amp; Email Update</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Photo &amp; Biometric Update (ফটো ও বায়'মেট্ৰিক)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Aadhaar Download &amp; Print</li>
+          </ul>
+
+          <div class="card-notice mandatory">
+            আধাৰ কাৰ্ডৰ নতুন পঞ্জীয়ন আৰু সংশোধনৰ বাবে আমাৰ কেন্দ্ৰলৈ আহিব লাগিব।
+          </div>
+
+          <div class="card-actions">
+            <a href="#contact" class="btn btn-navy btn-sm">কেন্দ্ৰলৈ আহক</a>
+            <a href="#" data-bind-tel class="btn btn-outline btn-sm">Call Now</a>
+          </div>
+        </article>
+
+        <!-- CATEGORY 2: PAN Card Services -->
+        <article class="service-card" id="cat-pan" data-mode="online" data-keywords="pan পেন কাৰ্ড apply correction name dob photo address signature e-pan download">
+          <div class="card-top">
+            <div class="card-title-group">
+              <div class="card-icon green">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="11" y2="15"/></svg>
+              </div>
+              <div>
+                <h3>২. PAN Card Services</h3>
+                <small>পেন কাৰ্ডৰ সেৱা</small>
+              </div>
+            </div>
+            <span class="mode-tag online">অনলাইন আবেদন উপলব্ধ</span>
+          </div>
+
+          <ul class="service-list">
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> New PAN Card Apply (নতুন আবেদন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> PAN Card Correction (সংশোধন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Name &amp; DOB Correction (নাম ও জন্ম তাৰিখ)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Photo Correction (ফটো সংশোধন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Address &amp; Signature Update (ঠিকনা ও স্বাক্ষৰ)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> e-PAN Download (ই-পেন ডাউনলোড)</li>
+          </ul>
+
+          <div class="card-notice info">
+            অনলাইন আবেদন আৰু নথিপত্ৰৰ সহায়ৰ বাবে হোৱাটছএপযোগে আমাৰ সৈতে যোগাযোগ কৰিব পাৰে।
+          </div>
+
+          <div class="card-actions">
+            <a href="#" class="btn btn-green btn-sm wa-service-btn" data-service="PAN Card Services">অনলাইন আবেদন কৰক</a>
+            <a href="#" class="btn btn-outline btn-sm wa-inquiry-btn" data-service="PAN Card Services">WhatsApp-ত যোগাযোগ কৰক</a>
+          </div>
+        </article>
+
+        <!-- CATEGORY 3: Voter ID Services -->
+        <article class="service-card" id="cat-voter" data-mode="online" data-keywords="voter id ভোটাৰ আইডি apply correction name address dob photo mobile download">
+          <div class="card-top">
+            <div class="card-title-group">
+              <div class="card-icon green">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+              </div>
+              <div>
+                <h3>৩. Voter ID Services</h3>
+                <small>ভোটাৰ আইডি সেৱা</small>
+              </div>
+            </div>
+            <span class="mode-tag online">অনলাইন আবেদন উপলব্ধ</span>
+          </div>
+
+          <ul class="service-list">
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> New Voter ID Apply (নতুন আবেদন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Voter ID Correction (সংশোধন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Name, Address &amp; DOB Correction</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Photo Update (ফটো আপডেট)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Mobile Number Update (মোবাইল নম্বৰ আপডেট)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Voter ID Download (ভোটাৰ কাৰ্ড ডাউনলোড)</li>
+          </ul>
+
+          <div class="card-notice info">
+            ভোটাৰ তালিকাৰ নতুন নাম অন্তৰ্ভুক্তি বা সংশোধনৰ অনলাইন আবেদনৰ বাবে যোগাযোগ কৰক।
+          </div>
+
+          <div class="card-actions">
+            <a href="#" class="btn btn-green btn-sm wa-service-btn" data-service="Voter ID Services">অনলাইন আবেদন কৰক</a>
+            <a href="#" class="btn btn-outline btn-sm wa-inquiry-btn" data-service="Voter ID Services">WhatsApp-ত যোগাযোগ কৰক</a>
+          </div>
+        </article>
+
+        <!-- CATEGORY 4: Online Form Services -->
+        <article class="service-card" id="cat-forms" data-mode="online" data-keywords="online form job government college university admission scholarship exam registration admit card result">
+          <div class="card-top">
+            <div class="card-title-group">
+              <div class="card-icon green">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <div>
+                <h3>৪. Online Form Services</h3>
+                <small>চাকৰি, নামভৰ্তি ও পৰীক্ষাৰ ফৰ্ম</small>
+              </div>
+            </div>
+            <span class="mode-tag online">অনলাইন আবেদন উপলব্ধ</span>
+          </div>
+
+          <ul class="service-list">
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Government Job Apply (চৰকাৰী চাকৰিৰ আবেদন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> College &amp; University Admission (নামভৰ্তি)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Scholarship Form (বৃত্তিৰ আবেদন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Exam Registration (পৰীক্ষাৰ পঞ্জীয়ন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Admit Card Download</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Result Download (ফলাফল ডাউনলোড)</li>
+          </ul>
+
+          <div class="card-notice info">
+            নথিপত্ৰ, ফটো আৰু স্বাক্ষৰ নিৰ্দিষ্ট মাপত প্ৰস্তুত কৰি নিখুঁতভাৱে ফৰ্ম পূৰণ কৰা হয়।
+          </div>
+
+          <div class="card-actions">
+            <a href="#" class="btn btn-green btn-sm wa-service-btn" data-service="Online Form Services">অনলাইন আবেদন কৰক</a>
+            <a href="#" data-bind-tel class="btn btn-outline btn-sm">Call Now</a>
+          </div>
+        </article>
+
+        <!-- CATEGORY 5: Government Services -->
+        <article class="service-card" id="cat-govt" data-mode="online" data-keywords="passport birth death caste income ews prc labour ration card driving licence renewal চৰকাৰী সেৱা">
+          <div class="card-top">
+            <div class="card-title-group">
+              <div class="card-icon green">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+              </div>
+              <div>
+                <h3>৫. Government Services</h3>
+                <small>চৰকাৰী প্ৰমাণ-পত্ৰ ও অনুজ্ঞাপত্ৰ</small>
+              </div>
+            </div>
+            <span class="mode-tag online">অনলাইন আবেদন উপলব্ধ</span>
+          </div>
+
+          <ul class="service-list">
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Passport Apply (পাছপ'ৰ্ট আবেদন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Birth Certificate (জন্ম প্ৰমাণ-পত্ৰ)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Death Certificate (মৃত্যু প্ৰমাণ-পত্ৰ)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Caste Certificate (জাতিগত প্ৰমাণ-পত্ৰ)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Income Certificate (আয়ৰ প্ৰমাণ-পত্ৰ)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> EWS Certificate</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> PRC Apply (স্থায়ী বাসিন্দাৰ প্ৰমাণ-পত্ৰ)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Labour Card &amp; Ration Card Services</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Driving Licence Application &amp; Renewal</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Driving Licence Related Online Services</li>
+          </ul>
+
+          <div class="card-actions">
+            <a href="#" class="btn btn-green btn-sm wa-service-btn" data-service="Government Services">অনলাইন আবেদন কৰক</a>
+            <a href="#" class="btn btn-outline btn-sm wa-inquiry-btn" data-service="Government Services">WhatsApp-ত যোগাযোগ কৰক</a>
+          </div>
+        </article>
+
+        <!-- CATEGORY 6: Banking Services -->
+        <article class="service-card" id="cat-banking" data-mode="visit" data-keywords="banking বেংকিং bank account opening money transfer aeps balance enquiry mini statement pan aadhaar link">
+          <div class="card-top">
+            <div class="card-title-group">
+              <div class="card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+              </div>
+              <div>
+                <h3>৬. Banking Services</h3>
+                <small>বেংকিং আৰু AEPS সেৱা</small>
+              </div>
+            </div>
+            <span class="mode-tag visit">কেন্দ্ৰ ভ্ৰমণ প্ৰয়োজনীয়</span>
+          </div>
+
+          <ul class="service-list">
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Bank Account Opening Assistance</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Money Transfer (ধন প্ৰেৰণ)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> AEPS Services (আধাৰ যোগে লেনদেন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Balance Enquiry (বেলেঞ্চ পৰীক্ষা)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Mini Statement (মিনি ষ্টেটমেণ্ট)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> PAN-Aadhaar Linking</li>
+          </ul>
+
+          <div class="card-notice mandatory">
+            AEPS আৰু বায়'মেট্ৰিক বেংকিং লেনদেনৰ বাবে গ্ৰাহক নিজে আমাৰ কেন্দ্ৰলৈ আহিব লাগিব।
+          </div>
+
+          <div class="card-actions">
+            <a href="#contact" class="btn btn-navy btn-sm">কেন্দ্ৰলৈ আহক</a>
+            <a href="#" class="btn btn-outline btn-sm wa-inquiry-btn" data-service="Banking Services">WhatsApp-ত যোগাযোগ কৰক</a>
+          </div>
+        </article>
+
+        <!-- CATEGORY 7: Printing & Computer Services -->
+        <article class="service-card" id="cat-printing" data-mode="visit" data-keywords="printing black white colour photocopy scanning lamination pdf editing resume cv typing dtp document">
+          <div class="card-top">
+            <div class="card-title-group">
+              <div class="card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              </div>
+              <div>
+                <h3>৭. Printing &amp; Computer</h3>
+                <small>প্ৰিণ্টিং আৰু কম্পিউটাৰ সেৱা</small>
+              </div>
+            </div>
+            <span class="mode-tag visit">কেন্দ্ৰ সেৱা</span>
+          </div>
+
+          <ul class="service-list">
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Black &amp; White Printing (ক'লা-বগা প্ৰিণ্ট)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Colour Printing (ৰঙীন প্ৰিণ্ট)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Photocopy (ফটোকপি / জেৰক্স)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Document Scanning (নথিপত্ৰ স্কেনিং)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Lamination (লেমিনেচন)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> PDF Editing (PDF সম্পাদনা)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Resume &amp; CV Making</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Typing &amp; DTP (টাইপিং ও DTP)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Online Document Application</li>
+          </ul>
+
+          <div class="card-actions">
+            <a href="#contact" class="btn btn-navy btn-sm">কেন্দ্ৰলৈ আহক</a>
+            <a href="#" class="btn btn-outline btn-sm wa-inquiry-btn" data-service="Printing & Computer Services">WhatsApp-ত যোগাযোগ কৰক</a>
+          </div>
+        </article>
+
+        <!-- CATEGORY 8: Mobile Services -->
+        <article class="service-card" id="cat-mobile" data-mode="visit" data-keywords="mobile repairing software troubleshooting jio airtel vodafone idea vi sim card porting mnp activation">
+          <div class="card-top">
+            <div class="card-title-group">
+              <div class="card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              </div>
+              <div>
+                <h3>৮. Mobile Services</h3>
+                <small>মোবাইল মেৰামতি ও SIM কাৰ্ড সেৱা</small>
+              </div>
+            </div>
+            <span class="mode-tag visit">কেন্দ্ৰ ভ্ৰমণ প্ৰয়োজনীয়</span>
+          </div>
+
+          <ul class="service-list">
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Mobile Phone Repairing (মোবাইল মেৰামতি)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Mobile Software Services (ছফ্টৱেৰ সেৱা)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Mobile Troubleshooting (সমস্যা সমাধান)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> New Jio SIM Card (নতুন Jio SIM)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> New Airtel SIM Card (নতুন Airtel SIM)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> New Vodafone Idea (Vi) SIM Card</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> SIM Card Porting (MNP) &amp; Number Porting</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> New SIM Activation Assistance</li>
+          </ul>
+
+          <div class="card-notice mandatory">
+            মোবাইল মেৰামতি, নতুন SIM কাৰ্ড আৰু MNP প'ৰ্টিংৰ বাবে আধাৰ নথিসহ আমাৰ কেন্দ্ৰলৈ আহিব লাগিব।
+          </div>
+
+          <div class="card-actions">
+            <a href="#contact" class="btn btn-navy btn-sm">কেন্দ্ৰলৈ আহক</a>
+            <a href="#" data-bind-tel class="btn btn-outline btn-sm">Call Now</a>
+          </div>
+        </article>
+
+        <!-- CATEGORY 9: Other Online Services -->
+        <article class="service-card" id="cat-other" data-mode="online" data-keywords="electricity bill mobile recharge dth train ticket flight ticket email creation online applications">
+          <div class="card-top">
+            <div class="card-title-group">
+              <div class="card-icon green">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div>
+                <h3>৯. Other Online Services</h3>
+                <small>দৈনন্দিন অনলাইন সেৱা</small>
+              </div>
+            </div>
+            <span class="mode-tag online">অনলাইন আবেদন উপলব্ধ</span>
+          </div>
+
+          <ul class="service-list">
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Electricity Bill Payment (বিদ্যুৎ বিল পৰিশোধ)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Mobile Recharge (মোবাইল ৰিচাৰ্জ)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> DTH Recharge (ডিটিএইচ ৰিচাৰ্জ)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Train Ticket Booking (ৰে'ল টিকট বুকিং)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Flight Ticket Booking (বিমান টিকট বুকিং)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Email Creation (ই-মেইল আইডি খোলা)</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Online Applications (অন্যান্য অনলাইন আবেদন)</li>
+          </ul>
+
+          <div class="card-notice info">
+            বিল পৰিশোধ, ৰিচাৰ্জ বা টিকট বুকিংৰ বাবে হোৱাটছএপত বিৱৰণ পঠিয়াই দ্ৰুত সেৱা লাভ কৰক।
+          </div>
+
+          <div class="card-actions">
+            <a href="#" class="btn btn-green btn-sm wa-service-btn" data-service="Other Online Services">অনলাইন আবেদন কৰক</a>
+            <a href="#" class="btn btn-outline btn-sm wa-inquiry-btn" data-service="Other Online Services">WhatsApp-ত যোগাযোগ কৰক</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="no-results" id="noResults">
+        আপুনি বিচৰা সেৱাটো পোৱা নগ'ল। অনুগ্ৰহ কৰি অন্য শব্দ লিখি চাওক অথবা আমাক পোনপটীয়াকৈ ফোন/হোৱাটছএপ কৰক।
+      </div>
+
+      <!-- Honest & Compliant Notice -->
+      <div class="service-disclaimer">
+        <strong>গুৰুত্বপূৰ্ণ জাননী:</strong> Amin Computer হৈছে এক স্থানীয় চাইবাৰ কেফে, ডিজিটেল, কম্পিউটাৰ আৰু মোবাইল সেৱা কেন্দ্ৰ। সকলো চৰকাৰী নথিপত্ৰ, পৰিচয়-পত্ৰ, বেংকিং আৰু টেলিকম সেৱা সংশ্লিষ্ট বিভাগ আৰু সেৱা প্ৰদানকাৰীৰ নিয়ম অনুসৰিহে আগবঢ়োৱা হয়।
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. About Us Section -->
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="about-text">
+        <span class="section-label">About Us</span>
+        <h2>একেখন ঠাইতে ডিজিটেল, কম্পিউটাৰ আৰু মোবাইল সেৱাৰ সম্পূৰ্ণ সমাধান</h2>
+        <p>
+          <strong>Amin Computer</strong> হৈছে কামৰূপ জিলাৰ মেৰগাণ্ডা (হাতিপাৰা) অঞ্চলত অৱস্থিত এক নিৰ্ভৰযোগ্য স্থানীয় চাইবাৰ কেফে, ডিজিটেল, কম্পিউটাৰ আৰু মোবাইল সেৱা কেন্দ্ৰ। দৈনন্দিন জীৱনত প্ৰয়োজনীয় সকলো অনলাইন আবেদন, চৰকাৰী ফৰ্ম পূৰণ, প্ৰিণ্টিং-স্কেনিং আৰু মোবাইল সংক্ৰান্তীয় কাম যাতে আমাৰ অঞ্চলৰ ৰাইজে ওচৰতে সহজভাৱে লাভ কৰিব পাৰে—সেয়াই আমাৰ মূল উদ্দেশ্য।
+        </p>
+        <p>
+          চাকৰি প্ৰাৰ্থী আৰু ছাত্ৰ-ছাত্ৰীসকলৰ বাবে নিখুঁত ফৰ্ম পূৰণৰ পৰা আৰম্ভ কৰি ব্যৱসায়িক বা ব্যক্তিগত নথিপত্ৰ প্ৰস্তুতি, মোবাইল ফোন মেৰামতি, ছফ্টৱেৰ সেৱা আৰু নতুন SIM কাৰ্ড পঞ্জীয়নলৈকে প্ৰতিটো কাম দায়িত্বসহকাৰে কৰা হয়।
+        </p>
+
+        <ul class="about-list">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            নিখুঁত অনলাইন আবেদন
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            কম্পিউটাৰ ও প্ৰিণ্টিং সুবিধা
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            মোবাইল মেৰামতি ও SIM সেৱা
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            সুৰক্ষিত তথ্য ও ন্যায্য মাচুল
+          </li>
+        </ul>
+
+        <a href="#contact" class="btn btn-navy">Learn More / Get in Touch</a>
+      </div>
+
+      <div class="about-pillars">
+        <div class="about-pillar-card">
+          <div class="about-pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <h3>ডিজিটেল ও চৰকাৰী আবেদন সহায়</h3>
+            <p>PAN, Voter ID, চাকৰিৰ ফৰ্ম, পাছপ'ৰ্ট, Driving Licence, জাতিগত-আয়ৰ প্ৰমাণ-পত্ৰ আদি সকলো অনলাইন আবেদন নিখুঁতভাৱে কৰা হয়।</p>
+          </div>
+        </div>
+
+        <div class="about-pillar-card">
+          <div class="about-pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          </div>
+          <div>
+            <h3>প্ৰিণ্টিং, স্কেনিং ও কম্পিউটাৰ কাম</h3>
+            <p>ৰঙীন ও ক'লা-বগা প্ৰিণ্ট, জেৰক্স, লেমিনেচন, PDF সম্পাদনা, Resume/CV নিৰ্মাণ আৰু DTP-ৰ সকলো কাম দ্ৰুতভাৱে কৰা হয়।</p>
+          </div>
+        </div>
+
+        <div class="about-pillar-card">
+          <div class="about-pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <div>
+            <h3>মোবাইল মেৰামতি ও টেলিকম সেৱা</h3>
+            <p>মোবাইল ফোন মেৰামতি, ছফ্টৱেৰ ছাৰ্ভিচিং, নতুন Jio, Airtel, Vi SIM কাৰ্ড আৰু MNP প'ৰ্টিং সেৱা একেটা কেন্দ্ৰতে উপলব্ধ।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Why Choose Us Section -->
+  <section class="section section-surface" id="why-us">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Why Choose Us</span>
+        <h2 class="section-title">কিয় গ্ৰাহকসকলে Amin Computer বাছি লয়?</h2>
+        <p class="section-subtitle">সময়নিষ্ঠতা, সঠিক পৰামৰ্শ আৰু গ্ৰাহকৰ সন্তুষ্টি আমাৰ প্ৰতিটো সেৱাৰ মূল আধাৰ।</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>দ্ৰুত ও সময়োপযোগী সেৱা</h3>
+          <p>দ্ৰুত ইণ্টাৰনেট সংযোগ আৰু আধুনিক কম্পিউটাৰ-প্ৰিণ্টাৰৰ সহায়ত কম সময়ত নিখুঁত কাম সম্পন্ন কৰা হয়।</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>তথ্যৰ গোপনীয়তা ও নিৰ্ভৰযোগ্যতা</h3>
+          <p>প্ৰতিজন গ্ৰাহকৰ ব্যক্তিগত নথিপত্ৰ সুৰক্ষিতভাৱে ৰখা হয় আৰু সকলো তথ্য দেখুৱাই নিশ্চিত কৰাৰ পিছতহে জমা দিয়া হয়।</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3>ন্যায্য আৰু স্বচ্ছ মাচুল</h3>
+          <p>ছাত্ৰ-ছাত্ৰী, চাকৰি প্ৰাৰ্থী আৰু সাধাৰণ ৰাইজৰ সুবিধাৰ্থে সকলো সেৱা সুলভ আৰু স্বচ্ছ মূল্যত আগবঢ়োৱা হয়।</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <h3>সহজ হোৱাটছএপ ও ফোন সহায়</h3>
+          <p>যিকোনো ফৰ্ম বা নথিপত্ৰৰ বিষয়ে জানিবলৈ অথবা প্ৰিণ্টৰ বাবে ফাইল পঠিয়াবলৈ পোনপটীয়াকৈ WhatsApp কৰিব পাৰে।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">আমাৰ কেন্দ্ৰৰ ঠিকনা আৰু যোগাযোগ</h2>
+        <p class="section-subtitle">যিকোনো সেৱাৰ বাবে ফোন কৰক, WhatsApp-ত বাৰ্তা পঠিয়াওক অথবা আমাৰ কেন্দ্ৰলৈ পোনপটীয়াকৈ আহক।</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Business Contact Card -->
+        <div class="contact-card">
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <small>Phone Number (Click to Call)</small>
+                <a href="#" data-bind-tel data-bind="phoneDisplay">8453964011</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon green">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </div>
+              <div>
+                <small>WhatsApp Number (Click to Chat)</small>
+                <a href="#" data-bind-wa target="_blank" rel="noopener" data-bind="whatsappDisplay">7002215885</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <small>Address (ঠিকনা)</small>
+                <strong data-bind="addressFull">Vill - Merganda, PO - Hatipara, District - Kamrup, Assam, India, PIN - 781141</strong>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <small>Opening Hours (খোলা থকাৰ সময়)</small>
+                <strong data-bind="hours"></strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-buttons">
+            <a href="#" data-bind-tel class="btn btn-navy">Call Now</a>
+            <a href="#" data-bind-wa target="_blank" rel="noopener" class="btn btn-green">WhatsApp Us</a>
+          </div>
+        </div>
+
+        <!-- Get in Touch Form -> WhatsApp -->
+        <div class="form-card">
+          <h3>Get in Touch</h3>
+          <p>তলৰ ফৰ্মখন পূৰণ কৰি পঠিয়ালে পোনপটীয়াকৈ আমাৰ WhatsApp-ত আপোনাৰ বাৰ্তা খুলি যাব।</p>
+
+          <form id="inquiryForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="custName">আপোনাৰ নাম *</label>
+                <input type="text" id="custName" required placeholder="সম্পূৰ্ণ নাম লিখক" />
+              </div>
+              <div class="form-group">
+                <label for="custPhone">মোবাইল নম্বৰ *</label>
+                <input type="tel" id="custPhone" required placeholder="১০ টা সংখ্যাৰ নম্বৰ" />
+              </div>
+              <div class="form-group full">
+                <label for="custService">সেৱাৰ শ্ৰেণী বাছনি কৰক</label>
+                <select id="custService">
+                  <option value="Aadhaar Card Services (কেন্দ্ৰ ভ্ৰমণ)">1. Aadhaar Card Services (কেন্দ্ৰ ভ্ৰমণ)</option>
+                  <option value="PAN Card Services">2. PAN Card Services</option>
+                  <option value="Voter ID Services">3. Voter ID Services</option>
+                  <option value="Online Form Services">4. Online Form Services</option>
+                  <option value="Government Services">5. Government Services</option>
+                  <option value="Banking Services (AEPS)">6. Banking Services (AEPS)</option>
+                  <option value="Printing & Computer Services">7. Printing &amp; Computer Services</option>
+                  <option value="Mobile Services (Repair / SIM / MNP)">8. Mobile Services (Repair / SIM / MNP)</option>
+                  <option value="Other Online Services">9. Other Online Services</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="custMsg">আপোনাৰ বাৰ্তা</label>
+                <textarea id="custMsg" rows="3" placeholder="কি সেৱা বা সহায় বিচাৰিছে চমুকৈ লিখক..."></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-green" style="width:100%;">
+              WhatsApp-ত যোগাযোগ কৰক
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Google Maps Block -->
+      <div class="map-card">
+        <div class="map-bar">
+          <div>
+            <strong>Google Maps Location:</strong>
+            <span data-bind="addressShort">Vill - Merganda, PO - Hatipara, Kamrup, Assam - 781141</span>
+          </div>
+          <a href="#" data-bind-map target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+            Open in Google Maps ↗
+          </a>
+        </div>
+        <iframe
+          id="googleMapFrame"
+          class="map-frame"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Amin Computer Location Map"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="40" height="40" rx="8" fill="#102E4D" stroke="#244B73"/>
+              <rect x="8" y="10" width="24" height="15" rx="2" stroke="#FFFFFF" stroke-width="2"/>
+              <path d="M16 30H24" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+              <path d="M20 25V30" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+              <path d="M14.5 17.5L18.2 21L25.5 14" stroke="#22C55E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <span class="footer-brand-name">AMIN COMPUTER</span>
+              <span class="footer-brand-sub">Cyber Cafe • Digital • Computer • Mobile</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            মেৰগাণ্ডা, হাতিপাৰা (কামৰূপ, অসম)-ত অৱস্থিত ডিজিটেল, চৰকাৰী আবেদন, বেংকিং, প্ৰিণ্টিং, কম্পিউটাৰ আৰু মোবাইল সেৱাৰ এক বিশ্বস্ত স্থানীয় কেন্দ্ৰ।
+          </p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="#cat-aadhaar">Aadhaar, PAN &amp; Voter ID</a></li>
+            <li><a href="#cat-forms">Online Forms &amp; Govt Services</a></li>
+            <li><a href="#cat-banking">Banking &amp; AEPS Services</a></li>
+            <li><a href="#cat-printing">Printing &amp; Computer Services</a></li>
+            <li><a href="#cat-mobile">Mobile Repair &amp; SIM Cards</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact Information</h4>
+          <ul class="footer-links">
+            <li data-bind="addressFull"></li>
+            <li>Phone: <a href="#" data-bind-tel style="color:#93c5fd;" data-bind="phoneDisplay"></a></li>
+            <li>WhatsApp: <a href="#" data-bind-wa target="_blank" rel="noopener" style="color:#86efac;" data-bind="whatsappDisplay"></a></li>
+            <li><a href="#" data-bind-map target="_blank" rel="noopener" style="color:#93c5fd;">Open in Google Maps ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Amin Computer. All Rights Reserved.</p>
+        <p>Vill - Merganda, PO - Hatipara, District - Kamrup, Assam - 781141</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Clean Floating WhatsApp Button -->
+  <a href="#" data-bind-wa class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp Us">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12.03 2C6.51 2 2.04 6.48 2.04 12c0 1.76.46 3.48 1.34 5L2 22l5.14-1.35c1.48.81 3.16 1.24 4.89 1.24 5.52 0 9.99-4.48 9.99-10S17.55 2 12.03 2zm5.82 14.13c-.25.7-1.44 1.34-2 1.42-.52.08-1.18.11-1.91-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.37-5.16-4.57-.15-.2-1.23-1.64-1.23-3.13 0-1.49.78-2.22 1.05-2.52.28-.3.6-.38.8-.38h.58c.18 0 .43-.07.68.52.25.6.85 2.07.92 2.22.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.54-.15.15-.3.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.48.13.65-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.28.1 1.76.83 2.06.98.3.15.5.23.58.35.08.13.08.73-.17 1.43z"/>
+    </svg>
+    <span class="wa-label">WhatsApp Us</span>
+  </a>
+
+  <script>
+    /* =====================================================================
+       EDITABLE BUSINESS CONFIGURATION — AMIN COMPUTER
+       Update phone, WhatsApp, address, opening hours, or map links here.
+       ===================================================================== */
+    const SHOP_CONFIG = {
+      name: "Amin Computer",
+      phoneRaw: "+918453964011",
+      phoneDisplay: "8453964011",
+      whatsappNumber: "917002215885",
+      whatsappDisplay: "7002215885",
+      addressShort: "Vill - Merganda, PO - Hatipara, Kamrup, Assam - 781141",
+      addressFull: "Vill - Merganda, PO - Hatipara, District - Kamrup, Assam, India, PIN - 781141",
+      hours: "সোমবাৰ – শনিবাৰ: পুৱা ৯:০০ – নিশা ৮:০০",
+      googleMapsLink: "https://maps.app.goo.gl/PdtoVgdedUAQYXtY6?g_st=ac",
+      googleMapsEmbed: "https://www.google.com/maps?q=Merganda,Hatipara,Kamrup,Assam,781141&output=embed",
+      defaultWhatsAppMsg: "নমস্কাৰ Amin Computer! মই আপোনাৰ সেৱাসমূহৰ বিষয়ে জানিব বিচাৰোঁ।"
+    };
+
+    // Populate business data across all elements
+    function applyShopConfig() {
+      document.querySelectorAll("[data-bind]").forEach((el) => {
+        const key = el.getAttribute("data-bind");
+        if (SHOP_CONFIG[key]) {
+          el.textContent = SHOP_CONFIG[key];
+        }
+      });
+
+      document.querySelectorAll("[data-bind-tel]").forEach((el) => {
+        el.setAttribute("href", `tel:${SHOP_CONFIG.phoneRaw}`);
+      });
+
+      const baseWaUrl = `https://wa.me/${SHOP_CONFIG.whatsappNumber}?text=${encodeURIComponent(SHOP_CONFIG.defaultWhatsAppMsg)}`;
+      document.querySelectorAll("[data-bind-wa]").forEach((el) => {
+        el.setAttribute("href", baseWaUrl);
+      });
+
+      document.querySelectorAll("[data-bind-map]").forEach((el) => {
+        el.setAttribute("href", SHOP_CONFIG.googleMapsLink);
+      });
+
+      const mapFrame = document.getElementById("googleMapFrame");
+      if (mapFrame) {
+        mapFrame.src = SHOP_CONFIG.googleMapsEmbed;
+      }
+
+      // Connect "অনলাইন আবেদন কৰক" buttons to WhatsApp
+      document.querySelectorAll(".wa-service-btn").forEach((btn) => {
+        const serviceName = btn.getAttribute("data-service");
+        const msg = `নমস্কাৰ ${SHOP_CONFIG.name}! মই "${serviceName}"-ৰ অধীনত অনলাইন আবেদন কৰিব বিচাৰোঁ। অনুগ্ৰহ কৰি সহায় কৰক।`;
+        btn.setAttribute("href", `https://wa.me/${SHOP_CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`);
+        btn.setAttribute("target", "_blank");
+        btn.setAttribute("rel", "noopener");
+      });
+
+      // Connect "WhatsApp-ত যোগাযোগ কৰক" buttons to WhatsApp
+      document.querySelectorAll(".wa-inquiry-btn").forEach((btn) => {
+        const serviceName = btn.getAttribute("data-service");
+        const msg = `নমস্কাৰ ${SHOP_CONFIG.name}! মই "${serviceName}" সেৱাৰ বিষয়ে জানিব বিচাৰোঁ।`;
+        btn.setAttribute("href", `https://wa.me/${SHOP_CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`);
+        btn.setAttribute("target", "_blank");
+        btn.setAttribute("rel", "noopener");
+      });
+    }
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Navbar scroll state & active link highlight
+    const navbar = document.getElementById("navbar");
+    const navLinks = document.querySelectorAll(".nav-links a");
+    const sections = document.querySelectorAll("section[id]");
+
+    window.addEventListener("scroll", () => {
+      navbar.classList.toggle("scrolled", window.scrollY > 10);
+
+      let currentId = "";
+      sections.forEach((sec) => {
+        if (window.scrollY >= sec.offsetTop - 120) {
+          currentId = sec.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${currentId}`);
+      });
+    });
+
+    // Service Category Filter & Search
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const serviceCards = document.querySelectorAll(".service-card");
+    const serviceSearch = document.getElementById("serviceSearch");
+    const noResults = document.getElementById("noResults");
+    let activeMode = "all";
+
+    function filterServices() {
+      const query = serviceSearch.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      serviceCards.forEach((card) => {
+        const mode = card.getAttribute("data-mode");
+        const keywords = (card.getAttribute("data-keywords") + " " + card.textContent).toLowerCase();
+        const matchesMode = activeMode === "all" || mode === activeMode;
+        const matchesSearch = !query || keywords.includes(query);
+
+        if (matchesMode && matchesSearch) {
+          card.classList.remove("hidden");
+          visibleCount++;
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+
+      noResults.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filterButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeMode = btn.getAttribute("data-filter");
+        filterServices();
+      });
+    });
+
+    serviceSearch.addEventListener("input", filterServices);
+
+    // Get in Touch Form -> Pre-filled WhatsApp Chat
+    document.getElementById("inquiryForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("custName").value.trim();
+      const phone = document.getElementById("custPhone").value.trim();
+      const service = document.getElementById("custService").value;
+      const msg = document.getElementById("custMsg").value.trim();
+
+      const fullMessage =
+        `নমস্কাৰ ${SHOP_CONFIG.name}!\n` +
+        `নাম: ${name}\n` +
+        `মোবাইল নম্বৰ: ${phone}\n` +
+        `প্ৰয়োজনীয় সেৱা: ${service}\n` +
+        (msg ? `বাৰ্তা: ${msg}` : "");
+
+      const waUrl = `https://wa.me/${SHOP_CONFIG.whatsappNumber}?text=${encodeURIComponent(fullMessage)}`;
+      window.open(waUrl, "_blank", "noopener");
+    });
+
+    // Initialize
+    applyShopConfig();
+  </script>
+</body>
+</html>
